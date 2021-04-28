@@ -24,11 +24,11 @@ def adlogin():
             flash('Email does not exist', category='error')
     return render_template('adlogin.html', user=current_user)
 
-@auth.route('/logout')
+@auth.route('/adlogout')
 @login_required
-def logout():
+def adlogout():
     logout_user()
-    return redirect(url_for('auth.adlogin'))
+    return redirect(url_for('views.home'))
 
 @auth.route('/adsign-up', methods=['GET', 'POST'])
 def adsign_up():
