@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
-from .models import Note
+from .models import Chore
 from . import db
 import json
 
@@ -15,15 +15,15 @@ def home():
 @login_required
 def adhome():
     if request.method == 'POST':
-        note = request.form.get('note')
+        chore = request.form.get('chore')
 
-        if len(note) < 1:
-            flash('Note is too short!', category='error')
+        if len(chore) < 1:
+            flash('Chore is too short!', category='error')
         else:
-            new_note = Note(data=note, user_id=current_user.id)
-            db.session.add(new_note)
+            new_chore = Chore(data=chore, user_id=current_user.id)
+            db.session.add(new_chore)
             db.session.commit()
-            flash('Note added!', category='success')
+            flash('Chore added!', category='success')
 
     return render_template("adhome.html", user=current_user)
 
@@ -32,7 +32,7 @@ def adhome():
 def delete_note():
     note = json.loads(request.data)
     noteId = note['noteId']
-    note = Note.query.get(noteId)
+    note = Chore.query.get(noteId)
     if note:
         if note.user_id == current_user.id:
             db.session.delete(note)
