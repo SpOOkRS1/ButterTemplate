@@ -29,27 +29,11 @@ ul{
   margin-left: auto;
 }
 
-footer{
-  position: fixed;
-  bottom: 0;
-  background-image: linear-gradient(to right, #D8B5FF,  #1BFFFF);
-  color: white;
-}
+
 
 /**************** Classes ****************/
-.container{
-  background-image: linear-gradient(to right, #D8B5FF,  #1BFFFF);
-  color: #FFFFFF;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  justify-content:center;
-  border-bottom: thin solid silver;
-}
 
 /****************IDs'****************/
-
 /* navbar-brand color gradient version */
 /* #LOGO-brand{
   background: linear-gradient(to right, #D8B5FF,  #1BFFFF);

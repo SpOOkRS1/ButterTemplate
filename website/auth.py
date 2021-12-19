@@ -3,6 +3,7 @@ from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
+from .forms import ProjectForm
 
 auth = Blueprint('auth', __name__)
 
@@ -30,32 +31,16 @@ def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
+# Sign-up view
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
-    if request.method == 'POST':
-        email = request.form.get('email')
-        firstName = request.form.get('firstName')
-        password1 = request.form.get('password1')
-        password2 = request.form.get('password2')
-
-        user = User.query.filter_by(email=email).first()
-        if user:
-            flash('Email already exists', category='error')
-        elif len(email) < 4:
-            flash('Email must be longer than 3 characters.', category = 'error')
-        elif len(firstName) < 2:
-            flash('Firstname must be longer than 1 character.', category = 'error')
-        elif password1 != password2:
-            flash('Passwords do not match.', category = 'error')
-        elif len(password1) < 7:
-            flash('Password must be longer than 6 characters.', category = 'error')
-        else:
-            # add user to the data base
-            new_user = User(email=email, firstName=firstName, password=generate_password_hash(password1, method='sha256'))
-            db.session.add(new_user)
-            db.session.commit()
-            login_user(new_user, remember=True)
-            flash('Account created!', category = 'success')
-            return redirect(url_for('views.home'))
-
-    return render_template('sign_up.html', user=current_user)
+  project_type = None
+  company_name= None
+  form = ProjectForm()
+  if form.validate_on_submit():
+    project_type = form.project_type.data
+    company_name = form.company_name.data
+    form.company_name.data = ''
+    form.project_type.data = ''
+    
+  return render_template('sign_up.html', project_type = project_type, company_name=company_name, form = form)

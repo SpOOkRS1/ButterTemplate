@@ -12,6 +12,8 @@ flask-sqlalchemy = "^2.5.1"
 sqlalchemy = "^1.4.7"
 website = "^1.1"
 werkzeug = "^1.0.1"
+Flask-WTF = "^1.0.0"
+WTForms = "^3.0.0"
 
 [tool.poetry.dev-dependencies]
 
