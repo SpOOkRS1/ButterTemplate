@@ -1,20 +1,30 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
-<h1 align="center">Notes</h1>
-<ul class="list-group list-group-flush" id="notes">
-   {% for note in user.notes %}
-   <li class="list-group-item">
-      {{ note.data }}
-      <button type="button" class="close" onClick= "deleteNote({{ note.id }})">
-      <span aria-hidden="true">&times;</span>
-      </button>
-   </li>
-   {% endfor %}
-</ul>
-<form method="POST">
-   <textarea name="note" id="note" class="form-control"></textarea>
-   <br />
-   <div align="center">
-      <button type="submit" class="btn btn-primary">Add Note</button>
-   </div>
-</form>
+{% extends "base.html" %} 
+{% block title %}Home{% endblock %} 
+{% block content%}
+
+<!-- Welcome -->
+<div class = "container">
+  <h1 align="center">Welcome to Agera</h1>
+</div>
+<hr>
+<br>
+
+<!-- What we do -->
+<div class = "container">
+  <h2>What we do</h2>
+  <img src="..." class="img-thumbnail img-fluid" alt="...">
+  <img src="..." class="img-thumbnail img-fluid" alt="...">
+  <img src="..." class="img-thumbnail img-fluid" alt="...">
+</div>
+<hr>
+<br>
+
+<!-- Call to action -->
+<div class = "container">
+  <h2>Call to action</h2>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-primary" type="button">Get Started</button>
+</div>
+<br>
+
 {% endblock %}

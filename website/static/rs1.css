@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Gruppo&display=swap');
+
+body{
+  font-family: 'Gruppo', sans-serif;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+}
+
+h1{
+  font-size: 30px;
+}
+
+p{
+  font-size: 18px;
+}
+
+ul{
+    /* makes bullet points disappear*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  background-image: linear-gradient(to right, #D8B5FF,  #1BFFFF);
+  color: white;
+}
+
+/**************** Classes ****************/
+.container{
+  background-image: linear-gradient(to right, #D8B5FF,  #1BFFFF);
+  color: #FFFFFF;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  justify-content:center;
+  border-bottom: thin solid silver;
+}
+
+/****************IDs'****************/
+
+/* navbar-brand color gradient version */
+/* #LOGO-brand{
+  background: linear-gradient(to right, #D8B5FF,  #1BFFFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+*/
+
+
+
+/******* @media *******/
+@media only screen and (min-width:650px){
+  
+}
+
+@media only screen and (min-width:875px){
+
+}
+
+@media only screen and (min-width:1024px){
+
+}
+
+@media only screen and (min-width:1600px){
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********For reference and for use********/
