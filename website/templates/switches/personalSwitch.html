@@ -1,19 +1,19 @@
-{% extends "base.html" %} {% block title %}Signup{% endblock %}<
+{% extends "base.html" %} 
+{% block title %}Personal{% endblock %}<
 {% block content %}
 
 {% if company_name %}
   <h1> Hello {{ company_name }} </h1
 {% else %}
-  <h1>Whats your company? </h1>
 
   <form method = "POST">
     {{ form.hidden_tag()}}
-    {{ form.company_name.label(class = "form-label") }}
-    {{ form.company_name(class = "form-control") }}
+    {{ form.first_name.label(class = "form-label") }}
+    {{ form.first_name(class = "form-control") }}
     <br>
     {{ form.hidden_tag()}}
-    {{ form.company_email.label(class = "form-label") }}
-    {{ form.company_email(class = "form-control") }}
+    {{ form.email.label(class = "form-label") }}
+    {{ form.email(class = "form-control") }}
     <br>
     {{ form.hidden_tag()}}
     {{ form.project_type.label(class = "form-label") }}
